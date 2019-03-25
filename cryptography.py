@@ -28,12 +28,15 @@ Goodbye!
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
 
 Z = input('Enter e to encrypt, d to decrypt, or q to quit: ')
-    if Z != 'e' and Z != 'd' and Z != 'q' :
-    print('Did not understand command, try again.')
-    Message = input('Message: ')
+while Z=='e' or Z=='d':
+Message = input('Message: ')
     Key: input('Key: ')
     for x in Message:
-    E = (associations.find(x))
+        E = (associations.find(x))
+        
+if Z != 'e' and Z != 'd' and Z != 'q' :
+    print('Did not understand command, try again.')
+   
     
 
 
