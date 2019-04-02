@@ -27,21 +27,38 @@ Goodbye!
 
 associations = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;'\"/\\<>(){}[]-=_+?!"
 lister=[]
+listers=[]
 Z = 'b'
 while Z != 'q':
     Z = input('Enter e to encrypt, d to decrypt, or q to quit: ')
-    if Z == 'e' or Z == 'd':
+    if Z == 'e':
         Message = input('Message: ')
         Key = input('Key: ')
         M = [associations.find(x) for x in Message]
         K = [associations.find(x) for x in Key]
+        print(M)
+        print(K)
         for i in range(len(M)):
             Sum = M[i] + K[i%(len(K))]
             lister.append(Sum)
-        print(lister)
         associations1= list(associations)
         T = [(associations1[x]) for x in lister]
-        print("".join(T))
+        print(lister)
+        print(T)
+        NM="".join(T)
+        print(NM)
+    if Z == 'd':
+        M1 = [associations.find(x) for x in NM]
+        K1 = [associations.find(x) for x in Key]
+        print(M1)
+        print(K1)
+        for i in range(len(M)):
+            Sum1 = M1[i] - K1[i%(len(K1))]
+            listers.append(Sum1)
+        T1 = [(associations1[x]) for x in lister]
+        print(T1)
+        DM = "".join(T1)
+        print(DM)
     if Z != 'e' and Z != 'd' and Z != 'q':
         print('Did not understand command, try again.')
     if Z == 'q':
