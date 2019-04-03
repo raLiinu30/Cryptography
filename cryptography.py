@@ -51,12 +51,13 @@ while Z != 'q':
         DKey = input('Key: ')
         M1 = [associations.find(x) for x in DMessage]
         K1 = [associations.find(x) for x in DKey]
-        for i in range(len(M)):
+        for i in range(len(M1)):
             Sum1 = M1[i] - K1[i%(len(K1))]
             listers.append(Sum1)
             for i in range(len(listers)):
                 if listers[i] >= len(associations):
                     listers[i] = listers[i]-len(associations)
+        associations1= list(associations)
         LDM = [(associations1[x]) for x in listers]
         DM = "".join(LDM)
         print(DM)
