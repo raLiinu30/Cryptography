@@ -38,11 +38,10 @@ while Z != 'q':
         K = [associations.find(x) for x in Key]
         for i in range(len(M)):
             Sum = M[i] + K[i%(len(K))]
-            print(Sum)
             lister.append(Sum)
-            for i in lister:
-                if i >= len(associations):
-                    lister = lister[i-len(associations)]
+            for i in range(len(lister)):
+                if lister[i] >= len(associations):
+                    lister[i] = i-len(associations)
         associations1= list(associations)
         LEM = [(associations1[x]) for x in lister]
         EM="".join(LEM)
@@ -55,6 +54,9 @@ while Z != 'q':
         for i in range(len(M)):
             Sum1 = M1[i] - K1[i%(len(K1))]
             listers.append(Sum1)
+            for i in range(len(listers)):
+                if listers[i] >= len(associations):
+                    listers[i] = i-len(associations)
         LDM = [(associations1[x]) for x in listers]
         DM = "".join(LDM)
         print(DM)
