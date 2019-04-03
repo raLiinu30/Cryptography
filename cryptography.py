@@ -41,7 +41,7 @@ while Z != 'q':
             lister.append(Sum)
             for i in range(len(lister)):
                 if lister[i] >= len(associations):
-                    lister[i] = i-len(associations)
+                    lister[i] = lister[i]-len(associations)
         associations1= list(associations)
         LEM = [(associations1[x]) for x in lister]
         EM="".join(LEM)
@@ -56,7 +56,7 @@ while Z != 'q':
             listers.append(Sum1)
             for i in range(len(listers)):
                 if listers[i] >= len(associations):
-                    listers[i] = i-len(associations)
+                    listers[i] = lister[i]-len(associations)
         LDM = [(associations1[x]) for x in listers]
         DM = "".join(LDM)
         print(DM)
