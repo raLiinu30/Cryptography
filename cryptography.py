@@ -54,6 +54,9 @@ while Z != 'q':
         for i in range(len(M)):
             Sum1 = M1[i] - K1[i%(len(K1))]
             listers.append(Sum1)
+            for i in range(len(listers)):
+                if listers[i] >= len(associations):
+                    listers[i] = listers[i]-len(associations)
         LDM = [(associations1[x]) for x in listers]
         DM = "".join(LDM)
         print(DM)
