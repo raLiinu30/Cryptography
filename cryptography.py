@@ -46,6 +46,7 @@ while Z != 'q':
         LEM = [(associations1[x]) for x in lister]
         EM="".join(LEM)
         print(EM)
+        lister = []
     if Z == 'd':
         DMessage = input('Message: ')
         DKey = input('Key: ')
@@ -61,6 +62,7 @@ while Z != 'q':
         LDM = [(associations1[x]) for x in listers]
         DM = "".join(LDM)
         print(DM)
+        listers = []
     if Z != 'e' and Z != 'd' and Z != 'q':
         print('Did not understand command, try again.')
     if Z == 'q':
